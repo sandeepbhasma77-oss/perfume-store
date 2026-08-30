@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ÉLAN PARFUMS | The Art of Quiet Luxury</title>
+    <title>Shop The Collection | ÉLAN PARFUMS</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -90,55 +90,53 @@
     <div class="search-overlay" id="search-overlay">
         <button class="close-search" aria-label="Close search">&times;</button>
         <div class="search-container">
-            <input type="text" id="search-input-field" placeholder="Search fragrances, notes, families...">
+            <input type="text" id="search-input-field" placeholder="Search perfumes, notes, families...">
         </div>
     </div>
 
-    <!-- ================= HERO SECTION ================= -->
-    <section class="hero" id="home">
-        <div class="hero-bg-image" aria-hidden="true"></div>
-        <div class="hero-overlay" aria-hidden="true"></div>
-
-        <div class="hero-content">
-            <div class="hero-text">
-                <span class="hero-label anim-hero-label">ÉLAN PARFUMS</span>
-                <h1 class="anim-hero-heading">The Art of<br>Quiet Luxury</h1>
-                <p class="hero-supporting-text anim-hero-desc">Timeless fragrances crafted with intention, designed to be felt, never announced.</p>
-                <a href="shop.html" class="btn-primary hero-btn anim-hero-btn">Discover the Collection</a>
-            </div>
-
-            <div class="hero-footer-words anim-hero-words" aria-hidden="true">
-                <span>ELEGANCE</span>
-                <span>INTENTION</span>
-                <span>ESSENCE</span>
-            </div>
-        </div>
+    <!-- ================= PAGE HEADER ================= -->
+    <section class="page-header-editorial">
+        <h1>SHOP THE COLLECTION</h1>
+        <p>A curated collection of fragrances created to become part of your story.</p>
     </section>
 
-    <!-- ================= PHILOSOPHY SECTION ================= -->
-    <section class="philosophy-section reveal reveal-up" id="philosophy">
-        <div class="philosophy-content">
-            <span class="philosophy-label">THE PHILOSOPHY</span>
-            <h2 class="philosophy-heading">
-                Fragrance is not<br>what you wear.<br><br>
-                <span>It is what<br>you leave behind.</span>
-            </h2>
-            <p class="philosophy-text">
-                We compose fragrances with patient restraint. Rooted in natural botanical extracts, rare woods, and pure distillations, each formula creates an intimate aura that seamlessly evolves with the warmth of your skin.
-            </p>
-        </div>
-    </section>
+    <!-- ================= FILTER BAR ================= -->
+    <div class="shop-filter-bar reveal reveal-up">
+        <button class="filter-toggle-btn" id="filter-toggle" aria-expanded="false">FILTER <i class="fas fa-chevron-down"></i></button>
+        <div class="filter-drawer-overlay" id="filter-drawer-overlay"></div>
+        <div class="filter-drawer" id="filter-drawer">
+            <div class="filter-categories" id="filter-categories">
+                <button class="filter-pill active" data-filter="all">ALL</button>
+                <button class="filter-pill" data-filter="women">FOR HER</button>
+                <button class="filter-pill" data-filter="men">FOR HIM</button>
+                <button class="filter-pill" data-filter="unisex">UNISEX</button>
+                <button class="filter-pill" data-filter="oud">OUD</button>
+                <button class="filter-pill" data-filter="floral">FLORAL</button>
+                <button class="filter-pill" data-filter="woody">WOODY</button>
+                <button class="filter-pill" data-filter="fresh">FRESH</button>
+            </div>
 
-    <!-- ================= FEATURED FRAGRANCES SECTION ================= -->
-    <section class="featured-fragrances" id="featured">
-        <div class="section-header reveal reveal-up">
-            <h2>FEATURED FRAGRANCES</h2>
-            <p>Discover the scents that define ÉLAN.</p>
+            <div class="filter-controls">
+                <div class="filter-search-wrap">
+                    <input type="text" id="shop-live-search" placeholder="Search collection...">
+                    <i class="fas fa-search"></i>
+                </div>
+                <div class="filter-sort">
+                    <select id="shop-sort" aria-label="Sort products">
+                        <option value="featured">SORT BY: FEATURED</option>
+                        <option value="price-low">PRICE: LOW TO HIGH</option>
+                        <option value="price-high">PRICE: HIGH TO LOW</option>
+                    </select>
+                </div>
+            </div>
         </div>
+    </div>
 
-        <div class="products-grid-clean">
+    <!-- ================= PRODUCTS GRID (4-COLUMN DESKTOP) ================= -->
+    <div class="featured-fragrances">
+        <div class="products-grid-clean" id="shop-products-grid">
             <!-- Product 1 -->
-            <div class="clean-product-card product-card reveal reveal-up" data-category="unisex">
+            <div class="clean-product-card product-card" data-category="unisex woody" data-price="120">
                 <span class="clean-product-badge">BESTSELLER</span>
                 <button class="clean-wishlist-btn wishlist-btn" aria-label="Add Santal No.03 to wishlist">
                     <i class="far fa-heart"></i>
@@ -153,7 +151,7 @@
             </div>
 
             <!-- Product 2 -->
-            <div class="clean-product-card product-card reveal reveal-up" data-category="men">
+            <div class="clean-product-card product-card" data-category="men woody" data-price="135">
                 <span class="clean-product-badge">NEW</span>
                 <button class="clean-wishlist-btn wishlist-btn" aria-label="Add Noir No.07 to wishlist">
                     <i class="far fa-heart"></i>
@@ -168,7 +166,8 @@
             </div>
 
             <!-- Product 3 -->
-            <div class="clean-product-card product-card reveal reveal-up" data-category="women">
+            <div class="clean-product-card product-card" data-category="women floral fresh" data-price="110">
+                <span class="clean-product-badge">BESTSELLER</span>
                 <button class="clean-wishlist-btn wishlist-btn" aria-label="Add Éclat No.05 to wishlist">
                     <i class="far fa-heart"></i>
                 </button>
@@ -182,7 +181,7 @@
             </div>
 
             <!-- Product 4 -->
-            <div class="clean-product-card product-card reveal reveal-up" data-category="unisex">
+            <div class="clean-product-card product-card" data-category="unisex woody" data-price="145">
                 <span class="clean-product-badge">ICONIC</span>
                 <button class="clean-wishlist-btn wishlist-btn" aria-label="Add Ambre No.01 to wishlist">
                     <i class="far fa-heart"></i>
@@ -195,127 +194,75 @@
                 <div class="clean-product-price product-price">$145.00</div>
                 <button class="clean-cart-btn cart-btn">Add to Bag</button>
             </div>
-        </div>
-    </section>
 
-    <!-- ================= EDITORIAL PARALLAX SECTION ================= -->
-    <section class="editorial-parallax-banner reveal reveal-up" aria-label="The Art of Perfumery">
-        <div class="parallax-banner-content">
-            <h2>THE ART OF<br>PERFUMERY</h2>
-            <p>Formulated with patience in our Parisian atelier. Each note is held in perfect equilibrium, offering a quiet depth that lingers endlessly.</p>
-            <a href="about.html" class="btn-primary">EXPLORE OUR CRAFT <i class="fas fa-arrow-right"></i></a>
-        </div>
-    </section>
-
-    <!-- ================= COLLECTIONS TRIPTYCH ================= -->
-    <section class="home-collections-section" id="collections">
-        <div class="section-header reveal reveal-up">
-            <h2>The Collections</h2>
-            <p>Three distinct olfactory worlds, curated for quiet presence.</p>
-        </div>
-
-        <div class="collection-triptych">
-            <!-- Card 01: SANTAL -->
-            <div class="editorial-card reveal reveal-up">
-                <div class="editorial-card-image">
-                    <img src="Images/elan-hero.jpg" alt="ÉLAN SANTAL collection">
+            <!-- Product 5 -->
+            <div class="clean-product-card product-card" data-category="men oud woody" data-price="160">
+                <span class="clean-product-badge">RARE</span>
+                <button class="clean-wishlist-btn wishlist-btn" aria-label="Add Royal Oud No.09 to wishlist">
+                    <i class="far fa-heart"></i>
+                </button>
+                <div class="clean-product-image product-image">
+                    <img src="Images/parallax-bg.jpg" alt="Royal Oud No.09 luxury perfume bottle">
                 </div>
-                <div class="editorial-card-content">
-                    <span class="editorial-card-num">01</span>
-                    <h3>SANTAL</h3>
-                    <p class="editorial-card-notes">Warm · Woody · Creamy</p>
-                    <a href="collections.html" class="card-explore">Explore Collection <i class="fas fa-arrow-right"></i></a>
-                </div>
+                <h3>ROYAL OUD NO.09</h3>
+                <p class="clean-product-family">Oud / Smoked Resin</p>
+                <div class="clean-product-price product-price">$160.00</div>
+                <button class="clean-cart-btn cart-btn">Add to Bag</button>
             </div>
 
-            <!-- Card 02: NOIR -->
-            <div class="editorial-card reveal reveal-up">
-                <div class="editorial-card-image">
-                    <img src="Images/elan-noir.jpg" alt="ÉLAN NOIR collection">
+            <!-- Product 6 -->
+            <div class="clean-product-card product-card" data-category="women floral fresh" data-price="115">
+                <button class="clean-wishlist-btn wishlist-btn" aria-label="Add Fleur Blanche No.02 to wishlist">
+                    <i class="far fa-heart"></i>
+                </button>
+                <div class="clean-product-image product-image">
+                    <img src="Images/FLEUR BLANCHE NO.02.jpeg" alt="Fleur Blanche No.02 luxury perfume bottle">
                 </div>
-                <div class="editorial-card-content">
-                    <span class="editorial-card-num">02</span>
-                    <h3>NOIR</h3>
-                    <p class="editorial-card-notes">Dark · Spiced · Sensual</p>
-                    <a href="collections.html" class="card-explore">Explore Collection <i class="fas fa-arrow-right"></i></a>
-                </div>
+                <h3>FLEUR BLANCHE NO.02</h3>
+                <p class="clean-product-family">Floral / Radiant</p>
+                <div class="clean-product-price product-price">$115.00</div>
+                <button class="clean-cart-btn cart-btn">Add to Bag</button>
             </div>
 
-            <!-- Card 03: ÉCLAT -->
-            <div class="editorial-card reveal reveal-up">
-                <div class="editorial-card-image">
-                    <img src="Images/elan-eclat.jpg" alt="ÉLAN ÉCLAT collection">
+            <!-- Product 7 -->
+            <div class="clean-product-card product-card" data-category="men fresh woody" data-price="125">
+                <button class="clean-wishlist-btn wishlist-btn" aria-label="Add Vétiver Pur No.04 to wishlist">
+                    <i class="far fa-heart"></i>
+                </button>
+                <div class="clean-product-image product-image">
+                    <img src="Images/1.jpeg" alt="Vétiver Pur No.04 luxury perfume bottle">
                 </div>
-                <div class="editorial-card-content">
-                    <span class="editorial-card-num">03</span>
-                    <h3>ÉCLAT</h3>
-                    <p class="editorial-card-notes">Fresh · Floral · Radiant</p>
-                    <a href="collections.html" class="card-explore">Explore Collection <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ================= JOURNAL SECTION ================= -->
-    <section class="journal-section" id="journal">
-        <div class="journal-container">
-            <div class="section-header reveal reveal-up">
-                <h2>The Journal</h2>
-                <p>Stories from the world of ÉLAN — scent, craft, and quiet living.</p>
+                <h3>VÉTIVER PUR NO.04</h3>
+                <p class="clean-product-family">Fresh / Citrus Cedar</p>
+                <div class="clean-product-price product-price">$125.00</div>
+                <button class="clean-cart-btn cart-btn">Add to Bag</button>
             </div>
 
-            <div class="journal-grid">
-                <!-- Article 01 -->
-                <article class="journal-card reveal reveal-up">
-                    <div class="journal-card-image">
-                        <img src="Images/brand-story.jpg" alt="The Language of Scent editorial">
-                    </div>
-                    <div class="journal-card-content">
-                        <span class="journal-card-category">ESSAY</span>
-                        <h3>The Language of Scent</h3>
-                        <p>How fragrance communicates what words cannot — an exploration of memory, emotion, and the invisible art of perfumery.</p>
-                        <a href="#" class="journal-read-more">Read More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </article>
-
-                <!-- Article 02 -->
-                <article class="journal-card reveal reveal-up">
-                    <div class="journal-card-image">
-                        <img src="Images/elan-presence.jpg" alt="The Art of Perfume editorial">
-                    </div>
-                    <div class="journal-card-content">
-                        <span class="journal-card-category">CRAFT</span>
-                        <h3>The Art of Perfume</h3>
-                        <p>Inside the Parisian atelier where patience meets precision — the slow ritual of composing a lasting fragrance.</p>
-                        <a href="#" class="journal-read-more">Read More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </article>
-
-                <!-- Article 03 -->
-                <article class="journal-card reveal reveal-up">
-                    <div class="journal-card-image">
-                        <img src="Images/1.jpeg" alt="Inside the Atelier editorial">
-                    </div>
-                    <div class="journal-card-content">
-                        <span class="journal-card-category">ATELIER</span>
-                        <h3>Inside the Atelier</h3>
-                        <p>A rare glimpse into the space where raw botanicals become timeless essences — from source to flacon.</p>
-                        <a href="#" class="journal-read-more">Read More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </article>
+            <!-- Product 8 -->
+            <div class="clean-product-card product-card" data-category="unisex oud woody" data-price="150">
+                <span class="clean-product-badge">LIMITED</span>
+                <button class="clean-wishlist-btn wishlist-btn" aria-label="Add Cuir Intense No.08 to wishlist">
+                    <i class="far fa-heart"></i>
+                </button>
+                <div class="clean-product-image product-image">
+                    <img src="Images/elan-presence.jpg" alt="Cuir Intense No.08 luxury perfume bottle">
+                </div>
+                <h3>CUIR INTENSE NO.08</h3>
+                <p class="clean-product-family">Leather / Saffron Oud</p>
+                <div class="clean-product-price product-price">$150.00</div>
+                <button class="clean-cart-btn cart-btn">Add to Bag</button>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- ================= NEWSLETTER SECTION ================= -->
-    <section class="newsletter-section">
-        <div class="newsletter-container reveal reveal-up">
-            <h2>Stay in the world of ÉLAN.</h2>
-            <p>Discover new fragrances, stories and private releases.</p>
-            <form class="newsletter-form" onsubmit="event.preventDefault(); this.querySelector('button').textContent='WELCOME'; this.querySelector('input').value=''; setTimeout(()=>this.querySelector('button').textContent='JOIN THE JOURNAL',2000);">
-                <input type="email" placeholder="Your email address" required aria-label="Email address">
-                <button type="submit" class="btn-primary">JOIN THE JOURNAL</button>
-            </form>
+    <!-- ================= SHOP CAMPAIGN BANNER ================= -->
+    <section class="shop-campaign-banner reveal reveal-up">
+        <div class="campaign-banner-inner">
+            <div class="campaign-banner-text">
+                <h2>FIND YOUR<br>SIGNATURE</h2>
+                <p>Not sure where to begin? Explore our Discovery Atelier Set featuring four miniature flacons of our most coveted fragrances.</p>
+                <a href="collections.html" class="btn-primary">DISCOVER <i class="fas fa-arrow-right"></i></a>
+            </div>
         </div>
     </section>
 
