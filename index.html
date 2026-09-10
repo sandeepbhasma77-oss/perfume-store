@@ -50,7 +50,7 @@
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
                     <span class="nav-badge" id="wishlist-count">0</span>
                 </a>
-                <button class="nav-icon-btn open-cart" aria-label="Shopping Bag">
+                <button class="nav-icon-btn open-cart" aria-label="Shopping Cart">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
                     <span class="nav-badge" id="cart-count">0</span>
                 </button>
@@ -67,13 +67,13 @@
     <div class="cart-overlay" id="cart-overlay"></div>
     <div class="cart-sidebar" id="cart-sidebar">
         <div class="cart-header">
-            <h3>Your Bag</h3>
+            <h3>Your Cart</h3>
             <button class="close-cart" aria-label="Close cart">&times;</button>
         </div>
         <div class="cart-items" id="cart-items">
             <div class="cart-empty">
-                <i class="fas fa-shopping-bag"></i>
-                <h3>Your bag is empty</h3>
+                <i class="fas fa-shopping-cart"></i>
+                <h3>Your cart is empty</h3>
                 <p>Discover our signature fragrances to begin</p>
             </div>
         </div>
@@ -86,11 +86,14 @@
         </div>
     </div>
 
-    <!-- ================= SEARCH OVERLAY ================= -->
+    <!-- ================= SEARCH PANEL ================= -->
     <div class="search-overlay" id="search-overlay">
-        <button class="close-search" aria-label="Close search">&times;</button>
-        <div class="search-container">
-            <input type="text" id="search-input-field" placeholder="Search fragrances, notes, families...">
+        <div class="search-container" role="dialog" aria-label="Search fragrances">
+            <div class="lux-search-bar">
+                <i class="fas fa-search lux-search-icon" aria-hidden="true"></i>
+                <input type="text" id="search-input-field" placeholder="Search fragrances..." aria-label="Search fragrances" autocomplete="off" role="combobox" aria-expanded="false">
+                <button class="close-search" aria-label="Close search">&times;</button>
+            </div>
         </div>
     </div>
 
@@ -138,62 +141,70 @@
 
         <div class="products-grid-clean">
             <!-- Product 1 -->
-            <div class="clean-product-card product-card reveal reveal-up" data-category="unisex">
+            <div class="clean-product-card product-card reveal reveal-up" data-id="santal-no03" data-category="unisex">
                 <span class="clean-product-badge">BESTSELLER</span>
                 <button class="clean-wishlist-btn wishlist-btn" aria-label="Add Santal No.03 to wishlist">
                     <i class="far fa-heart"></i>
                 </button>
-                <div class="clean-product-image product-image">
-                    <img src="Images/elan-hero.jpg" alt="Santal No.03 luxury perfume bottle">
-                </div>
-                <h3>SANTAL NO.03</h3>
-                <p class="clean-product-family">Woody / Amber</p>
-                <div class="clean-product-price product-price">$120.00</div>
-                <button class="clean-cart-btn cart-btn">Add to Bag</button>
+                <a class="clean-product-link" href="product.html?id=santal-no03" aria-label="View Santal No.03">
+                    <div class="clean-product-image product-image">
+                        <img src="Images/elan-hero.jpg" alt="Santal No.03 luxury perfume bottle">
+                    </div>
+                    <h3>SANTAL NO.03</h3>
+                    <p class="clean-product-family">Woody / Amber</p>
+                    <div class="clean-product-price product-price">$120.00</div>
+                </a>
+                <button class="clean-cart-btn cart-btn">Add to Cart</button>
             </div>
 
             <!-- Product 2 -->
-            <div class="clean-product-card product-card reveal reveal-up" data-category="men">
+            <div class="clean-product-card product-card reveal reveal-up" data-id="noir-no07" data-category="men">
                 <span class="clean-product-badge">NEW</span>
                 <button class="clean-wishlist-btn wishlist-btn" aria-label="Add Noir No.07 to wishlist">
                     <i class="far fa-heart"></i>
                 </button>
-                <div class="clean-product-image product-image">
-                    <img src="Images/elan-noir.jpg" alt="Noir No.07 luxury perfume bottle">
-                </div>
-                <h3>NOIR NO.07</h3>
-                <p class="clean-product-family">Woody / Spicy</p>
-                <div class="clean-product-price product-price">$135.00</div>
-                <button class="clean-cart-btn cart-btn">Add to Bag</button>
+                <a class="clean-product-link" href="product.html?id=noir-no07" aria-label="View Noir No.07">
+                    <div class="clean-product-image product-image">
+                        <img src="Images/elan-noir.jpg" alt="Noir No.07 luxury perfume bottle">
+                    </div>
+                    <h3>NOIR NO.07</h3>
+                    <p class="clean-product-family">Woody / Spicy</p>
+                    <div class="clean-product-price product-price">$135.00</div>
+                </a>
+                <button class="clean-cart-btn cart-btn">Add to Cart</button>
             </div>
 
             <!-- Product 3 -->
-            <div class="clean-product-card product-card reveal reveal-up" data-category="women">
+            <div class="clean-product-card product-card reveal reveal-up" data-id="eclat-no05" data-category="women">
                 <button class="clean-wishlist-btn wishlist-btn" aria-label="Add Éclat No.05 to wishlist">
                     <i class="far fa-heart"></i>
                 </button>
-                <div class="clean-product-image product-image">
-                    <img src="Images/elan-eclat.jpg" alt="Éclat No.05 luxury perfume bottle">
-                </div>
-                <h3>ÉCLAT NO.05</h3>
-                <p class="clean-product-family">Floral / Musk</p>
-                <div class="clean-product-price product-price">$110.00</div>
-                <button class="clean-cart-btn cart-btn">Add to Bag</button>
+                <a class="clean-product-link" href="product.html?id=eclat-no05" aria-label="View Éclat No.05">
+                    <div class="clean-product-image product-image">
+                        <img src="Images/elan-eclat.jpg" alt="Éclat No.05 luxury perfume bottle">
+                    </div>
+                    <h3>ÉCLAT NO.05</h3>
+                    <p class="clean-product-family">Floral / Musk</p>
+                    <div class="clean-product-price product-price">$110.00</div>
+                </a>
+                <button class="clean-cart-btn cart-btn">Add to Cart</button>
             </div>
 
             <!-- Product 4 -->
-            <div class="clean-product-card product-card reveal reveal-up" data-category="unisex">
+            <div class="clean-product-card product-card reveal reveal-up" data-id="ambre-no01" data-category="unisex">
                 <span class="clean-product-badge">ICONIC</span>
                 <button class="clean-wishlist-btn wishlist-btn" aria-label="Add Ambre No.01 to wishlist">
                     <i class="far fa-heart"></i>
                 </button>
-                <div class="clean-product-image product-image">
-                    <img src="Images/brand-story.jpg" alt="Ambre No.01 luxury perfume bottle">
-                </div>
-                <h3>AMBRE NO.01</h3>
-                <p class="clean-product-family">Amber / Cashmere</p>
-                <div class="clean-product-price product-price">$145.00</div>
-                <button class="clean-cart-btn cart-btn">Add to Bag</button>
+                <a class="clean-product-link" href="product.html?id=ambre-no01" aria-label="View Ambre No.01">
+                    <div class="clean-product-image product-image">
+                        <img src="Images/brand-story.jpg" alt="Ambre No.01 luxury perfume bottle">
+                    </div>
+                    <h3>AMBRE NO.01</h3>
+                    <p class="clean-product-family">Amber / Cashmere</p>
+                    <div class="clean-product-price product-price">$145.00</div>
+                </a>
+                <button class="clean-cart-btn cart-btn">Add to Cart</button>
             </div>
         </div>
     </section>
@@ -380,6 +391,7 @@
         </div>
     </footer>
 
+    <script src="products.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
