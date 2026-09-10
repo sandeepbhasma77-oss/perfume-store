@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Collections | ÉLAN PARFUMS</title>
+    <title>Product | ÉLAN PARFUMS</title>
+    <meta name="description" content="Discover this ÉLAN PARFUMS fragrance — notes, price and atelier details.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700&display=swap" rel="stylesheet">
@@ -65,7 +66,7 @@
 
     <!-- ================= CART SIDEBAR ================= -->
     <div class="cart-overlay" id="cart-overlay"></div>
-    <div class="cart-sidebar" id="cart-sidebar">
+    <div class="cart-sidebar" id="cart-sidebar" role="dialog" aria-label="Shopping Cart">
         <div class="cart-header">
             <h3>Your Cart</h3>
             <button class="close-cart" aria-label="Close cart">&times;</button>
@@ -97,96 +98,70 @@
         </div>
     </div>
 
-    <!-- ================= PAGE HEADER ================= -->
-    <section class="page-header-editorial">
-        <h1>THE COLLECTIONS</h1>
-        <p>"Every scent has a mood. Every mood has a story."</p>
-    </section>
+    <!-- ================= PRODUCT DETAIL ================= -->
+    <main class="product-page">
+        <nav class="product-breadcrumb" aria-label="Breadcrumb">
+            <a href="shop.html">Shop</a>
+            <span aria-hidden="true">/</span>
+            <span id="crumb-name">Fragrance</span>
+        </nav>
 
-    <!-- ================= ALTERNATING EDITORIAL COLLECTION SECTIONS ================= -->
-    <div class="collections-editorial-container">
-        
-        <!-- 01 — WOODY -->
-        <section class="collection-split-row reveal reveal-up" id="woody">
-            <div class="collection-split-img">
-                <img src="Images/elan-hero.jpg" alt="Woody Collection by ÉLAN">
-            </div>
-            <div class="collection-split-text">
-                <span class="collection-split-num">01 — WOODY</span>
-                <h2>Sandalwood, Amber & Warm Leather</h2>
-                <div class="collection-notes-pills">
-                    <span>Warm Woods</span>
-                    <span>Soft Leather</span>
-                    <span>Deep Amber</span>
+        <div id="product-notfound" class="product-notfound" hidden>
+            <h1>Fragrance not found</h1>
+            <p>This composition is no longer available.</p>
+            <a href="shop.html" class="btn-primary">BACK TO THE COLLECTION</a>
+        </div>
+
+        <div class="product-detail-grid" id="product-detail" hidden>
+            <div class="product-gallery">
+                <div class="product-main-image">
+                    <span class="clean-product-badge" id="p-badge" hidden></span>
+                    <img id="p-image" src="" alt="">
                 </div>
-                <p class="desc">
-                    Grounding, intimate, and profoundly reassuring. Our woody compositions celebrate aged sandalwood distillations, cedarwood heartwood, and luminous balsamic accords created for quiet evening presence.
-                </p>
-                <a href="shop.html" class="btn-explore">EXPLORE WOODY SCENTS <i class="fas fa-arrow-right"></i></a>
+                <div class="product-thumbs" id="p-thumbs"></div>
             </div>
-        </section>
 
-        <!-- 02 — FLORAL -->
-        <section class="collection-split-row reverse reveal reveal-up" id="floral">
-            <div class="collection-split-img">
-                <img src="Images/elan-eclat.jpg" alt="Floral Collection by ÉLAN">
-            </div>
-            <div class="collection-split-text">
-                <span class="collection-split-num">02 — FLORAL</span>
-                <h2>Petals, Sunlight & Radiant Bloom</h2>
-                <div class="collection-notes-pills">
-                    <span>Fresh Petals</span>
-                    <span>Sunlit Jasmine</span>
-                    <span>Cashmere Softness</span>
+            <div class="product-info">
+                <span class="shop-eyebrow">ÉLAN PARFUMS</span>
+                <p class="product-number" id="p-number">N° — EAU DE PARFUM</p>
+                <h1 id="p-name">Fragrance</h1>
+                <p class="product-family" id="p-family">Family</p>
+                <p class="product-price-lg" id="p-price">$0.00</p>
+                <p class="product-desc" id="p-desc"></p>
+                <p class="product-long" id="p-long"></p>
+
+                <div class="product-notes" id="p-notes" aria-label="Fragrance notes"></div>
+
+                <div class="product-buy-row">
+                    <div class="qty-selector" aria-label="Quantity">
+                        <button id="qty-minus" aria-label="Decrease quantity">−</button>
+                        <span id="qty-value">1</span>
+                        <button id="qty-plus" aria-label="Increase quantity">+</button>
+                    </div>
+                    <button class="btn-primary product-add" id="p-add">ADD TO CART</button>
+                    <button class="product-wish" id="p-wish" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
                 </div>
-                <p class="desc">
-                    Delicate yet memorable. Inspired by French morning garden mists and freshly gathered May roses, balanced effortlessly with crystalline musks and soft vanilla nuances.
-                </p>
-                <a href="shop.html" class="btn-explore">EXPLORE FLORAL SCENTS <i class="fas fa-arrow-right"></i></a>
-            </div>
-        </section>
+                <button class="product-wish-text" id="p-wish-text"><i class="far fa-heart"></i> ADD TO WISHLIST</button>
 
-        <!-- 03 — OUD -->
-        <section class="collection-split-row reveal reveal-up" id="oud">
-            <div class="collection-split-img">
-                <img src="Images/elan-noir.jpg" alt="Oud Collection by ÉLAN">
-            </div>
-            <div class="collection-split-text">
-                <span class="collection-split-num">03 — OUD</span>
-                <h2>Dark Resin, Smoked Spices & Mystery</h2>
-                <div class="collection-notes-pills">
-                    <span>Dark Woods</span>
-                    <span>Smoky Incense</span>
-                    <span>Intense Sillage</span>
+                <div class="product-meta">
+                    <div><i class="fas fa-truck"></i><span>Complimentary shipping over $100 · 3–7 business days</span></div>
+                    <div><i class="fas fa-rotate-left"></i><span>14-day returns on unopened flacons</span></div>
+                    <div><i class="fas fa-flask"></i><span>Eau de parfum · crafted in the Paris atelier</span></div>
                 </div>
-                <p class="desc">
-                    Unapologetically rich and deeply alluring. Sourced from sustainable Agarwood harvests and blended with smoked cardamom and dark amber for an unforgettable olfactory trail.
-                </p>
-                <a href="shop.html" class="btn-explore">EXPLORE OUD SCENTS <i class="fas fa-arrow-right"></i></a>
             </div>
-        </section>
+        </div>
 
-        <!-- 04 — FRESH -->
-        <section class="collection-split-row reverse reveal reveal-up" id="fresh">
-            <div class="collection-split-img">
-                <img src="Images/elan-presence.jpg" alt="Fresh Collection by ÉLAN">
+        <section class="product-related" id="product-related" hidden>
+            <div class="related-head">
+                <h2>You may also like</h2>
+                <a href="shop.html" class="shop-hero-link">View all <i class="fas fa-arrow-right"></i></a>
             </div>
-            <div class="collection-split-text">
-                <span class="collection-split-num">04 — FRESH</span>
-                <h2>Crisp Citrus, Clean Linen & Air</h2>
-                <div class="collection-notes-pills">
-                    <span>Calabrian Bergamot</span>
-                    <span>Clean Mineral</span>
-                    <span>Airy Radiance</span>
-                </div>
-                <p class="desc">
-                    A breath of pure morning light. Sparkling bergamot and neroli harmonized with crushed green botanicals and sea mineral accords designed for seamless everyday elegance.
-                </p>
-                <a href="shop.html" class="btn-explore">EXPLORE FRESH SCENTS <i class="fas fa-arrow-right"></i></a>
-            </div>
+            <div class="products-grid-clean related-grid" id="related-grid"></div>
         </section>
+    </main>
 
-    </div>
+    <!-- Toast -->
+    <div class="elan-toast" id="elan-toast" role="status" aria-live="polite"><i class="fas fa-check"></i><span>Added to cart</span></div>
 
     <!-- ================= GLOBAL FOOTER ================= -->
     <footer class="global-footer">

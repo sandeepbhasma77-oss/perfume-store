@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shop The Collection | ÉLAN PARFUMS</title>
+    <meta name="description" content="Discover the ÉLAN PARFUMS fragrance collection — best sellers, new arrivals, eau de parfum and discovery sets.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700&display=swap" rel="stylesheet">
@@ -50,7 +51,7 @@
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
                     <span class="nav-badge" id="wishlist-count">0</span>
                 </a>
-                <button class="nav-icon-btn open-cart" aria-label="Shopping Bag">
+                <button class="nav-icon-btn open-cart" aria-label="Shopping Cart">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
                     <span class="nav-badge" id="cart-count">0</span>
                 </button>
@@ -65,15 +66,15 @@
 
     <!-- ================= CART SIDEBAR ================= -->
     <div class="cart-overlay" id="cart-overlay"></div>
-    <div class="cart-sidebar" id="cart-sidebar">
+    <div class="cart-sidebar" id="cart-sidebar" role="dialog" aria-label="Shopping Cart">
         <div class="cart-header">
-            <h3>Your Bag</h3>
+            <h3>Your Cart</h3>
             <button class="close-cart" aria-label="Close cart">&times;</button>
         </div>
         <div class="cart-items" id="cart-items">
             <div class="cart-empty">
-                <i class="fas fa-shopping-bag"></i>
-                <h3>Your bag is empty</h3>
+                <i class="fas fa-shopping-cart"></i>
+                <h3>Your cart is empty</h3>
                 <p>Discover our signature fragrances to begin</p>
             </div>
         </div>
@@ -86,172 +87,364 @@
         </div>
     </div>
 
-    <!-- ================= SEARCH OVERLAY ================= -->
+    <!-- ================= SEARCH PANEL ================= -->
     <div class="search-overlay" id="search-overlay">
-        <button class="close-search" aria-label="Close search">&times;</button>
-        <div class="search-container">
-            <input type="text" id="search-input-field" placeholder="Search perfumes, notes, families...">
+        <div class="search-container" role="dialog" aria-label="Search fragrances">
+            <div class="lux-search-bar">
+                <i class="fas fa-search lux-search-icon" aria-hidden="true"></i>
+                <input type="text" id="search-input-field" placeholder="Search fragrances..." aria-label="Search fragrances" autocomplete="off" role="combobox" aria-expanded="false">
+                <button class="close-search" aria-label="Close search">&times;</button>
+            </div>
         </div>
     </div>
 
-    <!-- ================= PAGE HEADER ================= -->
-    <section class="page-header-editorial">
-        <h1>SHOP THE COLLECTION</h1>
-        <p>A curated collection of fragrances created to become part of your story.</p>
+    <!-- ================= SHOP LUX HERO ================= -->
+    <section class="shop-hero-lux">
+        <div class="shop-hero-inner">
+            <div class="shop-hero-copy">
+                <span class="shop-eyebrow">ÉLAN PARFUMS</span>
+                <h1>THE FRAGRANCE<br><em>COLLECTION</em></h1>
+                <p class="shop-hero-desc">Ten distinctive compositions crafted around warm woods, luminous florals, dark spices and rare oud. Discover the scents that define ÉLAN.</p>
+                <div class="shop-hero-meta">
+                    <span><strong>10</strong> Fragrances</span>
+                    <span class="dot" aria-hidden="true"></span>
+                    <span>Eau de Parfum</span>
+                    <span class="dot" aria-hidden="true"></span>
+                    <span>Paris Atelier</span>
+                </div>
+                <div class="shop-hero-actions">
+                    <a href="#collection" class="btn-primary btn-sm">SHOP THE COLLECTION</a>
+                    <a href="collections.html" class="shop-hero-link">Explore our worlds <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="shop-hero-visual" aria-hidden="false">
+                <div class="shop-hero-img-main">
+                    <img src="Images/elan-hero.jpg" alt="ÉLAN Santal No.03 perfume flacon in warm light">
+                </div>
+                <div class="shop-hero-img-small">
+                    <img src="Images/elan-noir.jpg" alt="ÉLAN Noir No.07 dark perfume bottle">
+                </div>
+                <div class="shop-hero-card">
+                    <span>N°03 — SANTAL</span>
+                    <strong>Woody / Amber — $120</strong>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <!-- ================= FILTER BAR ================= -->
-    <div class="shop-filter-bar reveal reveal-up">
-        <button class="filter-toggle-btn" id="filter-toggle" aria-expanded="false">FILTER <i class="fas fa-chevron-down"></i></button>
-        <div class="filter-drawer-overlay" id="filter-drawer-overlay"></div>
-        <div class="filter-drawer" id="filter-drawer">
-            <div class="filter-categories" id="filter-categories">
-                <button class="filter-pill active" data-filter="all">ALL</button>
-                <button class="filter-pill" data-filter="women">FOR HER</button>
-                <button class="filter-pill" data-filter="men">FOR HIM</button>
-                <button class="filter-pill" data-filter="unisex">UNISEX</button>
-                <button class="filter-pill" data-filter="oud">OUD</button>
-                <button class="filter-pill" data-filter="floral">FLORAL</button>
-                <button class="filter-pill" data-filter="woody">WOODY</button>
-                <button class="filter-pill" data-filter="fresh">FRESH</button>
-            </div>
+    <!-- ================= COLLECTION INTRO ================= -->
+    <section class="shop-intro reveal reveal-up">
+        <span class="shop-eyebrow">DISCOVERY</span>
+        <h2>FIND YOUR SIGNATURE</h2>
+        <p>From creamy sandalwood and warm amber to luminous florals and rare oud, each ÉLAN composition is created to leave a lasting impression.</p>
+        <a href="#collection" class="btn-outline btn-sm">DISCOVER THE COLLECTION</a>
+    </section>
 
+    <!-- ================= MOST LOVED ================= -->
+    <section class="most-loved reveal reveal-up" aria-label="Most loved fragrances">
+        <div class="most-loved-head">
+            <div>
+                <span class="shop-eyebrow">MOST LOVED</span>
+                <h2>The ÉLAN signatures</h2>
+            </div>
+            <a href="#collection" class="shop-hero-link">Shop all <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="products-grid-clean most-loved-grid">
+            <div class="clean-product-card product-card" data-id="santal-no03" data-category="unisex woody bestsellers edp" data-price="120" data-name="SANTAL NO.03">
+                <span class="clean-product-badge">BESTSELLER</span>
+                <button class="clean-wishlist-btn wishlist-btn" aria-label="Add Santal No.03 to wishlist"><i class="far fa-heart"></i></button>
+                <a class="clean-product-link" href="product.html?id=santal-no03" aria-label="View Santal No.03">
+                    <div class="clean-product-image product-image"><img src="Images/elan-hero.jpg" alt="Santal No.03 luxury perfume bottle" loading="lazy"></div>
+                    <p class="clean-product-eyebrow">N°03 — EAU DE PARFUM 50ML</p>
+                    <h3>SANTAL NO.03</h3>
+                    <p class="clean-product-family">Woody / Amber</p>
+                    <div class="clean-product-price product-price">$120.00</div>
+                </a>
+                <button class="clean-cart-btn cart-btn" aria-label="Add Santal No.03 to cart">Add to Cart</button>
+            </div>
+            <div class="clean-product-card product-card" data-id="eclat-no05" data-category="women floral fresh bestsellers edp" data-price="110" data-name="ÉCLAT NO.05">
+                <span class="clean-product-badge">BESTSELLER</span>
+                <button class="clean-wishlist-btn wishlist-btn" aria-label="Add Éclat No.05 to wishlist"><i class="far fa-heart"></i></button>
+                <a class="clean-product-link" href="product.html?id=eclat-no05" aria-label="View Éclat No.05">
+                    <div class="clean-product-image product-image"><img src="Images/elan-eclat.jpg" alt="Éclat No.05 luxury perfume bottle" loading="lazy"></div>
+                    <p class="clean-product-eyebrow">N°05 — EAU DE PARFUM 50ML</p>
+                    <h3>ÉCLAT NO.05</h3>
+                    <p class="clean-product-family">Floral / Musk</p>
+                    <div class="clean-product-price product-price">$110.00</div>
+                </a>
+                <button class="clean-cart-btn cart-btn" aria-label="Add Éclat No.05 to cart">Add to Cart</button>
+            </div>
+            <div class="clean-product-card product-card" data-id="ambre-no01" data-category="unisex woody edp" data-price="145" data-name="AMBRE NO.01">
+                <span class="clean-product-badge">ICONIC</span>
+                <button class="clean-wishlist-btn wishlist-btn" aria-label="Add Ambre No.01 to wishlist"><i class="far fa-heart"></i></button>
+                <a class="clean-product-link" href="product.html?id=ambre-no01" aria-label="View Ambre No.01">
+                    <div class="clean-product-image product-image"><img src="Images/brand-story.jpg" alt="Ambre No.01 luxury perfume bottle" loading="lazy"></div>
+                    <p class="clean-product-eyebrow">N°01 — EAU DE PARFUM 50ML</p>
+                    <h3>AMBRE NO.01</h3>
+                    <p class="clean-product-family">Amber / Cashmere</p>
+                    <div class="clean-product-price product-price">$145.00</div>
+                </a>
+                <button class="clean-cart-btn cart-btn" aria-label="Add Ambre No.01 to cart">Add to Cart</button>
+            </div>
+            <div class="clean-product-card product-card" data-id="noir-no07" data-category="men woody new-arrivals edp" data-price="135" data-name="NOIR NO.07">
+                <span class="clean-product-badge">NEW</span>
+                <button class="clean-wishlist-btn wishlist-btn" aria-label="Add Noir No.07 to wishlist"><i class="far fa-heart"></i></button>
+                <a class="clean-product-link" href="product.html?id=noir-no07" aria-label="View Noir No.07">
+                    <div class="clean-product-image product-image"><img src="Images/elan-noir.jpg" alt="Noir No.07 luxury perfume bottle" loading="lazy"></div>
+                    <p class="clean-product-eyebrow">N°07 — EAU DE PARFUM 50ML</p>
+                    <h3>NOIR NO.07</h3>
+                    <p class="clean-product-family">Woody / Spicy</p>
+                    <div class="clean-product-price product-price">$135.00</div>
+                </a>
+                <button class="clean-cart-btn cart-btn" aria-label="Add Noir No.07 to cart">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= SHOPPING TOOLBAR ================= -->
+    <section class="shop-toolbar" id="collection" aria-label="Shop the collection">
+        <div class="shop-toolbar-head reveal reveal-up">
+            <div class="shop-toolbar-title">
+                <h2>THE COLLECTION</h2>
+                <p id="shop-result-count" aria-live="polite">Showing 10 fragrances</p>
+            </div>
             <div class="filter-controls">
                 <div class="filter-search-wrap">
-                    <input type="text" id="shop-live-search" placeholder="Search collection...">
-                    <i class="fas fa-search"></i>
+                    <i class="fas fa-search" aria-hidden="true"></i>
+                    <input type="text" id="shop-live-search" placeholder="Search collection..." aria-label="Search collection">
+                    <button id="shop-clear-search" class="shop-clear-btn" aria-label="Clear search" hidden>&times;</button>
                 </div>
                 <div class="filter-sort">
                     <select id="shop-sort" aria-label="Sort products">
-                        <option value="featured">SORT BY: FEATURED</option>
+                        <option value="featured">SORT: FEATURED</option>
+                        <option value="best-selling">BEST SELLING</option>
+                        <option value="newest">NEWEST</option>
                         <option value="price-low">PRICE: LOW TO HIGH</option>
                         <option value="price-high">PRICE: HIGH TO LOW</option>
+                        <option value="name-az">NAME: A – Z</option>
                     </select>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- ================= PRODUCTS GRID (4-COLUMN DESKTOP) ================= -->
-    <div class="featured-fragrances">
+        <div class="shop-filter-bar reveal reveal-up">
+            <button class="filter-toggle-btn" id="filter-toggle" aria-expanded="false">FILTER <i class="fas fa-chevron-down"></i></button>
+            <div class="filter-drawer-overlay" id="filter-drawer-overlay"></div>
+            <div class="filter-drawer" id="filter-drawer">
+                <div class="filter-categories" id="filter-categories" role="tablist" aria-label="Filter fragrances">
+                    <button class="filter-pill active" data-filter="all">All</button>
+                    <button class="filter-pill" data-filter="bestsellers">Best Sellers</button>
+                    <button class="filter-pill" data-filter="new-arrivals">New Arrivals</button>
+                    <button class="filter-pill" data-filter="edp">Eau de Parfum</button>
+                    <button class="filter-pill" data-filter="discovery-sets">Discovery Sets</button>
+                    <button class="filter-pill" data-filter="women">For Her</button>
+                    <button class="filter-pill" data-filter="men">For Him</button>
+                    <button class="filter-pill" data-filter="unisex">Unisex</button>
+                    <button class="filter-pill" data-filter="oud">Oud</button>
+                    <button class="filter-pill" data-filter="floral">Floral</button>
+                    <button class="filter-pill" data-filter="woody">Woody</button>
+                    <button class="filter-pill" data-filter="fresh">Fresh</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= PRODUCTS GRID ================= -->
+    <div class="featured-fragrances shop-catalogue">
         <div class="products-grid-clean" id="shop-products-grid">
             <!-- Product 1 -->
-            <div class="clean-product-card product-card" data-category="unisex woody" data-price="120">
+            <div class="clean-product-card product-card" data-id="santal-no03" data-category="unisex woody bestsellers edp" data-price="120" data-name="SANTAL NO.03">
                 <span class="clean-product-badge">BESTSELLER</span>
                 <button class="clean-wishlist-btn wishlist-btn" aria-label="Add Santal No.03 to wishlist">
                     <i class="far fa-heart"></i>
                 </button>
-                <div class="clean-product-image product-image">
-                    <img src="Images/elan-hero.jpg" alt="Santal No.03 luxury perfume bottle">
-                </div>
-                <h3>SANTAL NO.03</h3>
-                <p class="clean-product-family">Woody / Amber</p>
-                <div class="clean-product-price product-price">$120.00</div>
-                <button class="clean-cart-btn cart-btn">Add to Bag</button>
+                <a class="clean-product-link" href="product.html?id=santal-no03" aria-label="View Santal No.03">
+                    <div class="clean-product-image product-image">
+                        <img src="Images/elan-hero.jpg" alt="Santal No.03 luxury perfume bottle" loading="lazy">
+                    </div>
+                    <p class="clean-product-eyebrow">N°03 — EAU DE PARFUM 50ML</p>
+                    <h3>SANTAL NO.03</h3>
+                    <p class="clean-product-family">Woody / Amber</p>
+                    <p class="clean-product-desc">Creamy sandalwood, cardamom and warm amber. Our quiet icon.</p>
+                    <div class="clean-product-price product-price">$120.00</div>
+                </a>
+                <button class="clean-cart-btn cart-btn" aria-label="Add Santal No.03 to cart">Add to Cart</button>
             </div>
 
             <!-- Product 2 -->
-            <div class="clean-product-card product-card" data-category="men woody" data-price="135">
+            <div class="clean-product-card product-card" data-id="noir-no07" data-category="men woody new-arrivals edp" data-price="135" data-name="NOIR NO.07">
                 <span class="clean-product-badge">NEW</span>
                 <button class="clean-wishlist-btn wishlist-btn" aria-label="Add Noir No.07 to wishlist">
                     <i class="far fa-heart"></i>
                 </button>
-                <div class="clean-product-image product-image">
-                    <img src="Images/elan-noir.jpg" alt="Noir No.07 luxury perfume bottle">
-                </div>
-                <h3>NOIR NO.07</h3>
-                <p class="clean-product-family">Woody / Spicy</p>
-                <div class="clean-product-price product-price">$135.00</div>
-                <button class="clean-cart-btn cart-btn">Add to Bag</button>
+                <a class="clean-product-link" href="product.html?id=noir-no07" aria-label="View Noir No.07">
+                    <div class="clean-product-image product-image">
+                        <img src="Images/elan-noir.jpg" alt="Noir No.07 luxury perfume bottle" loading="lazy">
+                    </div>
+                    <p class="clean-product-eyebrow">N°07 — EAU DE PARFUM 50ML</p>
+                    <h3>NOIR NO.07</h3>
+                    <p class="clean-product-family">Woody / Spicy</p>
+                    <p class="clean-product-desc">Smoked cedar, black pepper and dark vanilla. After hours.</p>
+                    <div class="clean-product-price product-price">$135.00</div>
+                </a>
+                <button class="clean-cart-btn cart-btn" aria-label="Add Noir No.07 to cart">Add to Cart</button>
             </div>
 
             <!-- Product 3 -->
-            <div class="clean-product-card product-card" data-category="women floral fresh" data-price="110">
+            <div class="clean-product-card product-card" data-id="eclat-no05" data-category="women floral fresh bestsellers edp" data-price="110" data-name="ÉCLAT NO.05">
                 <span class="clean-product-badge">BESTSELLER</span>
                 <button class="clean-wishlist-btn wishlist-btn" aria-label="Add Éclat No.05 to wishlist">
                     <i class="far fa-heart"></i>
                 </button>
-                <div class="clean-product-image product-image">
-                    <img src="Images/elan-eclat.jpg" alt="Éclat No.05 luxury perfume bottle">
-                </div>
-                <h3>ÉCLAT NO.05</h3>
-                <p class="clean-product-family">Floral / Musk</p>
-                <div class="clean-product-price product-price">$110.00</div>
-                <button class="clean-cart-btn cart-btn">Add to Bag</button>
+                <a class="clean-product-link" href="product.html?id=eclat-no05" aria-label="View Éclat No.05">
+                    <div class="clean-product-image product-image">
+                        <img src="Images/elan-eclat.jpg" alt="Éclat No.05 luxury perfume bottle" loading="lazy">
+                    </div>
+                    <p class="clean-product-eyebrow">N°05 — EAU DE PARFUM 50ML</p>
+                    <h3>ÉCLAT NO.05</h3>
+                    <p class="clean-product-family">Floral / Musk</p>
+                    <p class="clean-product-desc">White petals, dewy musk and morning light. Radiant.</p>
+                    <div class="clean-product-price product-price">$110.00</div>
+                </a>
+                <button class="clean-cart-btn cart-btn" aria-label="Add Éclat No.05 to cart">Add to Cart</button>
             </div>
 
             <!-- Product 4 -->
-            <div class="clean-product-card product-card" data-category="unisex woody" data-price="145">
+            <div class="clean-product-card product-card" data-id="ambre-no01" data-category="unisex woody edp" data-price="145" data-name="AMBRE NO.01">
                 <span class="clean-product-badge">ICONIC</span>
                 <button class="clean-wishlist-btn wishlist-btn" aria-label="Add Ambre No.01 to wishlist">
                     <i class="far fa-heart"></i>
                 </button>
-                <div class="clean-product-image product-image">
-                    <img src="Images/brand-story.jpg" alt="Ambre No.01 luxury perfume bottle">
-                </div>
-                <h3>AMBRE NO.01</h3>
-                <p class="clean-product-family">Amber / Cashmere</p>
-                <div class="clean-product-price product-price">$145.00</div>
-                <button class="clean-cart-btn cart-btn">Add to Bag</button>
+                <a class="clean-product-link" href="product.html?id=ambre-no01" aria-label="View Ambre No.01">
+                    <div class="clean-product-image product-image">
+                        <img src="Images/brand-story.jpg" alt="Ambre No.01 luxury perfume bottle" loading="lazy">
+                    </div>
+                    <p class="clean-product-eyebrow">N°01 — EAU DE PARFUM 50ML</p>
+                    <h3>AMBRE NO.01</h3>
+                    <p class="clean-product-family">Amber / Cashmere</p>
+                    <p class="clean-product-desc">Golden amber wrapped in cashmere woods. The first house signature.</p>
+                    <div class="clean-product-price product-price">$145.00</div>
+                </a>
+                <button class="clean-cart-btn cart-btn" aria-label="Add Ambre No.01 to cart">Add to Cart</button>
             </div>
 
             <!-- Product 5 -->
-            <div class="clean-product-card product-card" data-category="men oud woody" data-price="160">
+            <div class="clean-product-card product-card" data-id="royal-oud-no09" data-category="men oud woody edp" data-price="160" data-name="ROYAL OUD NO.09">
                 <span class="clean-product-badge">RARE</span>
                 <button class="clean-wishlist-btn wishlist-btn" aria-label="Add Royal Oud No.09 to wishlist">
                     <i class="far fa-heart"></i>
                 </button>
-                <div class="clean-product-image product-image">
-                    <img src="Images/parallax-bg.jpg" alt="Royal Oud No.09 luxury perfume bottle">
-                </div>
-                <h3>ROYAL OUD NO.09</h3>
-                <p class="clean-product-family">Oud / Smoked Resin</p>
-                <div class="clean-product-price product-price">$160.00</div>
-                <button class="clean-cart-btn cart-btn">Add to Bag</button>
+                <a class="clean-product-link" href="product.html?id=royal-oud-no09" aria-label="View Royal Oud No.09">
+                    <div class="clean-product-image product-image">
+                        <img src="Images/parallax-bg.jpg" alt="Royal Oud No.09 luxury perfume bottle" loading="lazy">
+                    </div>
+                    <p class="clean-product-eyebrow">N°09 — EAU DE PARFUM 50ML</p>
+                    <h3>ROYAL OUD NO.09</h3>
+                    <p class="clean-product-family">Oud / Smoked Resin</p>
+                    <p class="clean-product-desc">Laotian oud, smoked resin and leather. Rare and resonant.</p>
+                    <div class="clean-product-price product-price">$160.00</div>
+                </a>
+                <button class="clean-cart-btn cart-btn" aria-label="Add Royal Oud No.09 to cart">Add to Cart</button>
             </div>
 
             <!-- Product 6 -->
-            <div class="clean-product-card product-card" data-category="women floral fresh" data-price="115">
+            <div class="clean-product-card product-card" data-id="fleur-blanche-no02" data-category="women floral fresh new-arrivals edp" data-price="115" data-name="FLEUR BLANCHE NO.02">
                 <button class="clean-wishlist-btn wishlist-btn" aria-label="Add Fleur Blanche No.02 to wishlist">
                     <i class="far fa-heart"></i>
                 </button>
-                <div class="clean-product-image product-image">
-                    <img src="Images/FLEUR BLANCHE NO.02.jpeg" alt="Fleur Blanche No.02 luxury perfume bottle">
-                </div>
-                <h3>FLEUR BLANCHE NO.02</h3>
-                <p class="clean-product-family">Floral / Radiant</p>
-                <div class="clean-product-price product-price">$115.00</div>
-                <button class="clean-cart-btn cart-btn">Add to Bag</button>
+                <a class="clean-product-link" href="product.html?id=fleur-blanche-no02" aria-label="View Fleur Blanche No.02">
+                    <div class="clean-product-image product-image">
+                        <img src="Images/FLEUR BLANCHE NO.02.jpeg" alt="Fleur Blanche No.02 luxury perfume bottle" loading="lazy">
+                    </div>
+                    <p class="clean-product-eyebrow">N°02 — EAU DE PARFUM 50ML</p>
+                    <h3>FLEUR BLANCHE NO.02</h3>
+                    <p class="clean-product-family">Floral / Radiant</p>
+                    <p class="clean-product-desc">Orange blossom, white tea and soft woods. Pure light.</p>
+                    <div class="clean-product-price product-price">$115.00</div>
+                </a>
+                <button class="clean-cart-btn cart-btn" aria-label="Add Fleur Blanche No.02 to cart">Add to Cart</button>
             </div>
 
             <!-- Product 7 -->
-            <div class="clean-product-card product-card" data-category="men fresh woody" data-price="125">
+            <div class="clean-product-card product-card" data-id="vetiver-pur-no04" data-category="men fresh woody edp" data-price="125" data-name="VÉTIVER PUR NO.04">
                 <button class="clean-wishlist-btn wishlist-btn" aria-label="Add Vétiver Pur No.04 to wishlist">
                     <i class="far fa-heart"></i>
                 </button>
-                <div class="clean-product-image product-image">
-                    <img src="Images/1.jpeg" alt="Vétiver Pur No.04 luxury perfume bottle">
-                </div>
-                <h3>VÉTIVER PUR NO.04</h3>
-                <p class="clean-product-family">Fresh / Citrus Cedar</p>
-                <div class="clean-product-price product-price">$125.00</div>
-                <button class="clean-cart-btn cart-btn">Add to Bag</button>
+                <a class="clean-product-link" href="product.html?id=vetiver-pur-no04" aria-label="View Vétiver Pur No.04">
+                    <div class="clean-product-image product-image">
+                        <img src="Images/1.jpeg" alt="Vétiver Pur No.04 luxury perfume bottle" loading="lazy">
+                    </div>
+                    <p class="clean-product-eyebrow">N°04 — EAU DE PARFUM 50ML</p>
+                    <h3>VÉTIVER PUR NO.04</h3>
+                    <p class="clean-product-family">Fresh / Citrus Cedar</p>
+                    <p class="clean-product-desc">Haitian vétiver, bergamot and dry cedar. Crisp tailoring.</p>
+                    <div class="clean-product-price product-price">$125.00</div>
+                </a>
+                <button class="clean-cart-btn cart-btn" aria-label="Add Vétiver Pur No.04 to cart">Add to Cart</button>
             </div>
 
             <!-- Product 8 -->
-            <div class="clean-product-card product-card" data-category="unisex oud woody" data-price="150">
+            <div class="clean-product-card product-card" data-id="cuir-intense-no08" data-category="unisex oud woody edp" data-price="150" data-name="CUIR INTENSE NO.08">
                 <span class="clean-product-badge">LIMITED</span>
                 <button class="clean-wishlist-btn wishlist-btn" aria-label="Add Cuir Intense No.08 to wishlist">
                     <i class="far fa-heart"></i>
                 </button>
-                <div class="clean-product-image product-image">
-                    <img src="Images/elan-presence.jpg" alt="Cuir Intense No.08 luxury perfume bottle">
-                </div>
-                <h3>CUIR INTENSE NO.08</h3>
-                <p class="clean-product-family">Leather / Saffron Oud</p>
-                <div class="clean-product-price product-price">$150.00</div>
-                <button class="clean-cart-btn cart-btn">Add to Bag</button>
+                <a class="clean-product-link" href="product.html?id=cuir-intense-no08" aria-label="View Cuir Intense No.08">
+                    <div class="clean-product-image product-image">
+                        <img src="Images/elan-presence.jpg" alt="Cuir Intense No.08 luxury perfume bottle" loading="lazy">
+                    </div>
+                    <p class="clean-product-eyebrow">N°08 — EAU DE PARFUM 50ML</p>
+                    <h3>CUIR INTENSE NO.08</h3>
+                    <p class="clean-product-family">Leather / Saffron Oud</p>
+                    <p class="clean-product-desc">Supple leather, saffron and oud. Magnetic intensity.</p>
+                    <div class="clean-product-price product-price">$150.00</div>
+                </a>
+                <button class="clean-cart-btn cart-btn" aria-label="Add Cuir Intense No.08 to cart">Add to Cart</button>
             </div>
+
+            <!-- Product 9 : Discovery -->
+            <div class="clean-product-card product-card" data-id="discovery-atelier-set" data-category="unisex discovery-sets new-arrivals bestsellers edp fresh woody floral" data-price="48" data-name="DISCOVERY ATELIER SET">
+                <span class="clean-product-badge">DISCOVERY</span>
+                <button class="clean-wishlist-btn wishlist-btn" aria-label="Add Discovery Atelier Set to wishlist">
+                    <i class="far fa-heart"></i>
+                </button>
+                <a class="clean-product-link" href="product.html?id=discovery-atelier-set" aria-label="View Discovery Atelier Set">
+                    <div class="clean-product-image product-image">
+                        <img src="Images/Luxury_perfume.jpeg" alt="Discovery Atelier Set of four miniature perfume flacons" loading="lazy">
+                    </div>
+                    <p class="clean-product-eyebrow">ATELIER — 4 × 2ML</p>
+                    <h3>DISCOVERY ATELIER SET</h3>
+                    <p class="clean-product-family">Discovery Set</p>
+                    <p class="clean-product-desc">Four miniatures — Santal, Noir, Éclat and Ambre. Find your signature.</p>
+                    <div class="clean-product-price product-price">$48.00</div>
+                </a>
+                <button class="clean-cart-btn cart-btn" aria-label="Add Discovery Atelier Set to cart">Add to Cart</button>
+            </div>
+
+            <!-- Product 10 : Discovery -->
+            <div class="clean-product-card product-card" data-id="les-iconiques-set" data-category="unisex discovery-sets edp oud woody" data-price="58" data-name="LES ICONIQUES SET">
+                <span class="clean-product-badge">DISCOVERY</span>
+                <button class="clean-wishlist-btn wishlist-btn" aria-label="Add Les Iconiques Discovery Set to wishlist">
+                    <i class="far fa-heart"></i>
+                </button>
+                <a class="clean-product-link" href="product.html?id=les-iconiques-set" aria-label="View Les Iconiques Set">
+                    <div class="clean-product-image product-image">
+                        <img src="Images/homepage.jpeg" alt="Les Iconiques Discovery Set luxury perfume miniatures" loading="lazy">
+                    </div>
+                    <p class="clean-product-eyebrow">ICONIQUES — 4 × 2ML</p>
+                    <h3>LES ICONIQUES SET</h3>
+                    <p class="clean-product-family">Discovery Set / Oud</p>
+                    <p class="clean-product-desc">Oud, cuir, ambre and vétiver in miniature. The dark icons.</p>
+                    <div class="clean-product-price product-price">$58.00</div>
+                </a>
+                <button class="clean-cart-btn cart-btn" aria-label="Add Les Iconiques Set to cart">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="shop-no-results" id="shop-no-results" hidden>
+            <h3>No fragrances found</h3>
+            <p>Try a different search or filter.</p>
+            <button class="btn-outline" id="shop-reset-filters">RESET FILTERS</button>
         </div>
     </div>
 
@@ -259,12 +452,16 @@
     <section class="shop-campaign-banner reveal reveal-up">
         <div class="campaign-banner-inner">
             <div class="campaign-banner-text">
+                <span class="campaign-eyebrow">THE DISCOVERY RITUAL</span>
                 <h2>FIND YOUR<br>SIGNATURE</h2>
                 <p>Not sure where to begin? Explore our Discovery Atelier Set featuring four miniature flacons of our most coveted fragrances.</p>
                 <a href="collections.html" class="btn-primary">DISCOVER <i class="fas fa-arrow-right"></i></a>
             </div>
         </div>
     </section>
+
+    <!-- Toast -->
+    <div class="elan-toast" id="elan-toast" role="status" aria-live="polite"><i class="fas fa-check"></i><span>Added to cart</span></div>
 
     <!-- ================= GLOBAL FOOTER ================= -->
     <footer class="global-footer">
@@ -327,6 +524,7 @@
         </div>
     </footer>
 
+    <script src="products.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
